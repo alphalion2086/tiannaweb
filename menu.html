@@ -1,30 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="static/favicon.ico">
-    <link rel="stylesheet" href="static/index.css">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Mac's Catering & Events</h1>
-    <img src="static/logo.png" alt="Mac's Catering & Events Logo">
-    <p>Click here for desserts</p>
-    <p>Some of our signature dishes:</p>
-    <ul class = 'entrees'>
-        <li>Herb-buttered Steak</li>
-        <li>Lemon Garlic Chicken</li>
-        <li>Cajun Shrimp Pasta</li>
-        <li>Honey-Glazed Salmon</li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Menu | Mac's Catering & Events</title>
+  </head>
+  <body>
+    <ul class="nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#ourWork">See Our Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-    <ul class="sides">
-        <li>Creamy Mashed Potatoes</li>
-        <li>Roasted Green Beans</li>
-        <li>Mac & Cheese</li>
-        <li>Seasonal Vegetables</li>
+
+    <h1 class="main-title">Menu</h1>
+    <div class="hero-wrapper">
+      <div class="hero-layout">
+        <img
+          id="menu-logo"
+          class="logo-swap"
+          src="clogo.png"
+          alt="Mac's Catering & Events Logo"
+        />
+        <div class="hero-container">A curated menu for every occasion</div>
+      </div>
+    </div>
+
+    <p class="description">
+      Discover a menu designed for comfort, celebration, and unforgettable
+      hospitality. We create unforgettable meals for every event size.
+    </p>
+
+    <p class="offerings-title">Signature Dishes</p>
+    <ul class="offerings">
+      <li>Herb-buttered steak</li>
+      <li>Lemon garlic chicken</li>
+      <li>Cajun shrimp pasta</li>
+      <li>Honey-glazed salmon</li>
+      <li>Creamy mashed potatoes</li>
+      <li>Roasted green beans</li>
+      <li>Mac & cheese</li>
+      <li>Seasonal vegetables</li>
     </ul>
-    <h2>Don't see what you want?</h2>
-    <p>For custom menu creations contact us!</p>
-    </body>
-    </html>
+
+    <p class="slogan">
+      Custom menu options are always available for your event.
+    </p>
+
+    <script type="module">
+      import { initializeLogoSwap } from "./logoSwap.js";
+
+      initializeLogoSwap("menu-logo");
+    </script>
+  </body>
+</html>

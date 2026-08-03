@@ -1,69 +1,227 @@
-
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    color: #f8f5f5;
-    background-color: rgb(38, 38, 105);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  color: #f8f5f5;
+  background-color: rgb(38, 38, 105);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  backface-visibility: hidden;
 }
 
 header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-
+  background: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
 }
 h1 {
-    font-size: 2.5em;
-    margin: 0;
-    text-align: center;
+  font-size: 2.5em;
+  margin: 0;
+  text-align: center;
 }
 
 .nav {
-    margin: 20px 0;
-    text-align: center;
-
+  margin: 24px 0 16px;
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
-nav a {
-    color: #333;
-    text-decoration: none;
-    padding: 5px 10px;
+.nav a {
+  color: #f8f5f5;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
-nav a:hover {
-    background: #ddd;
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
 }
+
+.logo-photo {
+  width: min(160px, 34vw);
+  height: min(160px, 34vw);
+  opacity: 0.7;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  transform-origin: center;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.logo-photo.spin-swap {
+  animation: logoSpinSwap 0.7s ease-in-out;
+}
+
+.hero-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0 18px;
+  width: fit-content;
+}
+
+.hero-container {
+  position: relative;
+  text-align: center;
+  font-size: 1.05em;
+  color: #ffffff;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px 24px 24px 8px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  max-width: 190px;
+  margin-left: -10px;
+  z-index: 2;
+}
+
+.hero-container::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  bottom: 12px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid rgba(255, 255, 255, 0.3);
+}
+
 .description {
-    border: 5px solid #333;
-    padding: 10px;
-    margin: 20px;
-    border-radius: 50px;
-    width: 80%;
-    text-align: center;
-    border-color:#B76E79
-
+  padding: 24px 28px;
+  margin: 24px auto 18px;
+  border-radius: 24px;
+  width: min(860px, 84%);
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .slogan {
-    font-style: cursive;
-    color: white;
+  font-style: italic;
+  color: #fefefe;
+  text-align: center;
+  margin: 0 auto 24px;
+  max-width: 700px;
 }
 
+.offerings-title {
+  margin-top: 90px;
+  text-align: center;
+  font-size: 1.4em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.offerings {
+  margin: 20px auto 60px;
+  padding: 18px 24px;
+  max-width: 560px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.offerings li {
+  margin-bottom: 8px;
+}
+
+.contact-page {
+  max-width: 800px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  margin-top: 20px;
+}
+
+.contact-card h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
 
 .container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
 }
 
 footer {
-    text-align: center;
-    padding: 10px 0;
-    background: #333;
-    color: #fff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  background: #333;
+  color: #fff;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+.logo-swap {
+  cursor: pointer;
+  transform-origin: center;
+  display: block;
+  width: min(140px, 35vw);
+  height: min(140px, 35vw);
+  margin: 12px auto 20px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.logo-swap.spin-swap {
+  animation: logoSpinSwap 0.7s ease-in-out;
+}
+
+@keyframes logoSpinSwap {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+.main-title {
+  font-size: 3em;
+  margin: 20px 0 10px;
+  text-align: center;
+  font-style: normal;
+  font-family: "Georgia", "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }

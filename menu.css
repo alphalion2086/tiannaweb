@@ -1,0 +1,26 @@
+&:hover .logo-swap {
+  transform: scale(1.25);
+}
+
+.logo-swap {
+  cursor: pointer;
+  transform-origin: center;
+  display: block;
+  width: min(140px, 35vw);
+  height: auto;
+  margin: 12px auto 20px;
+}
+
+.logo-swap.spin-swap {
+  animation: logoSpinSwap 0.7s ease-in-out;
+}
+
+@keyframes logoSpinSwap {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
