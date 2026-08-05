@@ -13,7 +13,7 @@ export function initializeLogoSwap(logoId) {
     menuLogo.classList.add("spin-swap");
 
     menuLogo.addEventListener("animationend", function handleSpinEnd() {
-      const showingCLogo = menuLogo.src.includes("clogo.PNG");
+      const showingCLogo = menuLogo.src.toLowerCase().includes("clogo.");
       const nextIsCLogo = !showingCLogo;
       menuLogo.src = nextIsCLogo ? "clogo.PNG" : "blogo.PNG";
       menuLogo.classList.remove("spin-swap");
