@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Our Work | Mac's Catering & Events</title>
+    <style>
+      .gallery-section {
+        margin: 40px auto 60px;
+        width: min(960px, 90%);
+      }
+
+      .gallery-section h2 {
+        text-align: center;
+        font-family: "Georgia", "Times New Roman", serif;
+        font-size: 1.6em;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 16px;
+      }
+
+      .gallery-grid img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 14px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .gallery-grid img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      }
+
+      #lightbox {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.88);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      #lightbox.open {
+        display: flex;
+      }
+
+      #lightbox-img {
+        max-width: 82vw;
+        max-height: 78vh;
+        border-radius: 12px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+        transition: opacity 0.2s ease;
+        object-fit: contain;
+      }
+
+      #lightbox-img.fading {
+        opacity: 0;
+      }
+
+      #lightbox-label {
+        color: rgba(255, 255, 255, 0.9);
+        font-family: "Georgia", serif;
+        font-size: 1em;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+
+      #lightbox-close {
+        position: absolute;
+        top: 18px;
+        right: 24px;
+        font-size: 2em;
+        color: #fff;
+        cursor: pointer;
+        background: none;
+        border: none;
+        line-height: 1;
+      }
+
+      .lightbox-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.15);
+        border: none;
+        color: #fff;
+        font-size: 2em;
+        padding: 10px 16px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.2s ease;
+        line-height: 1;
+        user-select: none;
+      }
+
+      .lightbox-arrow:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      #lightbox-prev { left: 20px; }
+      #lightbox-next { right: 20px; }
+
+      #lightbox-counter {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9em;
+        letter-spacing: 0.05em;
+      }
+
+      @media (max-width: 480px) {
+        .gallery-grid {
+          grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+          gap: 10px;
+        }
+
+        #lightbox-img {
+          max-width: 94vw;
+          max-height: 68vh;
+        }
+
+        .lightbox-arrow {
+          font-size: 1.4em;
+          padding: 8px 12px;
+        }
+
+        #lightbox-prev { left: 6px; }
+        #lightbox-next { right: 6px; }
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="our-work.html">Our Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <h1 class="main-title">Our Work</h1>
+
+    <section class="gallery-section">
+      <h2>Desserts</h2>
+      <div class="gallery-grid" data-category="Desserts">
+        <img src="pwork1.JPG" alt="Dessert creation" />
+        <img src="pwork2.JPG" alt="Dessert creation" />
+        <img src="4276.JPG" alt="Dessert creation" />
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <h2>Entrees</h2>
+      <div class="gallery-grid" data-category="Entrees">
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <h2>Menus</h2>
+      <div class="gallery-grid" data-category="Menus">
+        <img src="GDMmenu.JPG" alt="Menu creation" />
+        <img src="bbqmenu.PNG" alt="Menu creation" />
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <h2>Events</h2>
+      <div class="gallery-grid" data-category="Events">
+        <!-- Add event photos here -->
+      </div>
+    </section>
+
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image slideshow">
+      <button id="lightbox-close" aria-label="Close">&times;</button>
+      <span id="lightbox-label"></span>
+      <button class="lightbox-arrow" id="lightbox-prev" aria-label="Previous">&#8249;</button>
+      <img id="lightbox-img" src="" alt="Enlarged view" />
+      <button class="lightbox-arrow" id="lightbox-next" aria-label="Next">&#8250;</button>
+      <span id="lightbox-counter"></span>
+    </div>
+
+    <script>
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const lightboxLabel = document.getElementById("lightbox-label");
+      const counter = document.getElementById("lightbox-counter");
+      let slides = [];
+      let current = 0;
+
+      function showSlide(index, fade = false) {
+        current = (index + slides.length) % slides.length;
+        if (fade) {
+          lightboxImg.classList.add("fading");
+          setTimeout(() => {
+            lightboxImg.src = slides[current].src;
+            lightboxImg.classList.remove("fading");
+          }, 200);
+        } else {
+          lightboxImg.src = slides[current].src;
+        }
+        counter.textContent = (current + 1) + " / " + slides.length;
+      }
+
+      document.querySelectorAll(".gallery-grid").forEach((grid) => {
+        const imgs = Array.from(grid.querySelectorAll("img"));
+        const category = grid.dataset.category;
+        imgs.forEach((img, i) => {
+          img.addEventListener("click", () => {
+            slides = imgs;
+            lightboxLabel.textContent = category;
+            showSlide(i);
+            lightbox.classList.add("open");
+          });
+        });
+      });
+
+      document.getElementById("lightbox-prev").addEventListener("click", () => showSlide(current - 1, true));
+      document.getElementById("lightbox-next").addEventListener("click", () => showSlide(current + 1, true));
+      document.getElementById("lightbox-close").addEventListener("click", () => lightbox.classList.remove("open"));
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) lightbox.classList.remove("open");
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (!lightbox.classList.contains("open")) return;
+        if (e.key === "Escape") lightbox.classList.remove("open");
+        if (e.key === "ArrowLeft") showSlide(current - 1, true);
+        if (e.key === "ArrowRight") showSlide(current + 1, true);
+      });
+    </script>
+  </body>
+</html>
+</html>
