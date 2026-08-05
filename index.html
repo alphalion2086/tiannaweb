@@ -18,8 +18,9 @@
     <div class="hero-wrapper">
       <div class="hero-layout">
         <img
+          id="home-logo"
           class="logo-photo"
-          src="blogo.png"
+          src="blogo.PNG"
           alt="Mac's Catering & Events Logo"
         />
         <div class="hero-container">Catering with heart, style, and flavor</div>
@@ -48,6 +49,9 @@
       through food.
     </p>
 
-    <script src="index.js"></script>
+    <script type="module">
+      import { initializeLogoSwap } from "./logoSwap.js";
+      initializeLogoSwap("home-logo");
+    </script>
   </body>
 </html>

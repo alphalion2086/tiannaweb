@@ -241,3 +241,89 @@ footer {
   letter-spacing: 0.03em;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
+
+/* Tablet */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2.2em;
+    margin: 14px 0 8px;
+  }
+
+  .hero-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-container {
+    margin-left: 0;
+    margin-top: 10px;
+    max-width: 80%;
+    border-radius: 16px;
+  }
+
+  .hero-container::after {
+    display: none;
+  }
+
+  .description {
+    width: 88%;
+    padding: 18px 20px;
+    font-size: 0.95em;
+  }
+
+  .offerings-title {
+    margin-top: 50px;
+  }
+
+  .offerings {
+    max-width: 88%;
+  }
+
+  .slogan {
+    padding: 0 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 1.7em;
+  }
+
+  .nav {
+    gap: 8px;
+    margin: 14px 0 10px;
+  }
+
+  .nav a {
+    padding: 6px 10px;
+    font-size: 0.9em;
+  }
+
+  .logo-photo {
+    width: min(110px, 38vw);
+    height: min(110px, 38vw);
+  }
+
+  .description {
+    width: 90%;
+    padding: 14px 16px;
+    font-size: 0.9em;
+    margin: 16px auto 12px;
+  }
+
+  .offerings-title {
+    margin-top: 32px;
+    font-size: 1.1em;
+  }
+
+  .offerings {
+    padding: 14px 18px;
+    max-width: 90%;
+    margin-bottom: 36px;
+  }
+
+  .contact-card {
+    padding: 20px 16px;
+  }
+}

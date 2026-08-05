@@ -18,6 +18,7 @@
     <div class="hero-wrapper">
       <div class="hero-layout">
         <img
+          id="desserts-logo"
           class="logo-photo"
           src="blogo.png"
           alt="Mac's Catering & Events Logo"
@@ -42,6 +43,9 @@
 
     <p class="slogan">Let us add the finishing touch to your celebration.</p>
 
-    <script src="index.js"></script>
+    <script type="module">
+      import { initializeLogoSwap } from "./logoSwap.js";
+      initializeLogoSwap("desserts-logo");
+    </script>
   </body>
 </html>
