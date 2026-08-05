@@ -18,8 +18,9 @@
     <div class="hero-wrapper">
       <div class="hero-layout">
         <img
+          id="contact-logo"
           class="logo-photo"
-          src="blogo.png"
+          src="blogo.PNG"
           alt="Mac's Catering & Events Logo"
         />
         <div class="hero-container">
@@ -38,5 +39,10 @@
       <p><strong>Email:</strong> events@macscatering.com</p>
       <p><strong>Location:</strong>Contact for details regarding location.</p>
     </div>
+
+    <script type="module">
+      import { initializeLogoSwap } from "./logoSwap.js";
+      initializeLogoSwap("contact-logo");
+    </script>
   </body>
 </html>
