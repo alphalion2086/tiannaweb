@@ -125,6 +125,22 @@ h1 {
   align-items: center;
 }
 
+.featured-image-block {
+  display: flex;
+  justify-content: center;
+  margin: 24px auto 18px;
+  padding: 0 20px;
+}
+
+.featured-image {
+  width: min(320px, 72vw);
+  height: min(320px, 72vw);
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
 .slogan {
   font-style: italic;
   color: #fefefe;
